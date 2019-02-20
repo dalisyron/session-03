@@ -4,7 +4,12 @@ class Homework08Tests {
     companion object {
         val cities = listOf(City("Tehran"), City("Mashhad"), City("Shiraz"), City("Nishabur"))
 
-        val products = listOf(Product("Rug", 100.0), Product("Sculpture", 50.0), Product("Painting", 40.0), Product("Lonely Product", 0.0))
+        val products = listOf(
+            Product("Rug", 100.0),
+            Product("Sculpture", 50.0),
+            Product("Painting", 40.0),
+            Product("Lonely Product", 0.0)
+        )
 
         val orders = listOf(
             Order(listOf(products[0], products[1]), isDelivered = false),
@@ -42,17 +47,17 @@ class Homework08Tests {
 
         fun getCustomersSortedByOrdersAscendingTest() {
             val customers = shop.getCustomersSortedByOrdersAscending()
-            outputAssert(customers.map {it -> it.name} == listOf("Pewds", "Ali A", "Mobin", "Pepe"))
+            outputAssert(customers.map { it -> it.name } == listOf("Pewds", "Ali A", "Mobin", "Pepe"))
         }
 
         fun getCustomersSortedByOrdersDescendingTest() {
             val customers = shop.getCustomersSortedByOrdersDescending()
-            outputAssert(customers.map {it -> it.name} == listOf("Pepe", "Mobin", "Ali A", "Pewds"))
+            outputAssert(customers.map { it -> it.name } == listOf("Pepe", "Mobin", "Ali A", "Pewds"))
         }
 
         fun getOrderedProductsTest() {
             val products = customers[1].getOrderedProducts()
-            outputAssert(products.map{it -> it.name}.sorted() == listOf("Rug", "Sculpture"))
+            outputAssert(products.map { it -> it.name }.sorted() == listOf("Rug", "Sculpture"))
         }
 
         fun getProductsWithAtLeastOneBuyerTest() {
